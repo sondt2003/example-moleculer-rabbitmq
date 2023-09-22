@@ -1,0 +1,56 @@
+{
+  "name": "Ecommerce",
+  "version": "1.0.0",
+  "description": "My Moleculer-based microservices project",
+  "scripts": {
+    "dev": "moleculer-runner --repl --hot services/**/*.service.js",
+    "start": "moleculer-runner",
+    "cli": "moleculer connect STAN",
+    "ci": "jest --watch",
+    "test": "jest --detectOpenHandles --forceExit --coverage",
+    "lint": "eslint services",
+    "dc:up": "docker-compose up --build -d",
+    "dc:logs": "docker-compose logs -f",
+    "dc:down": "docker-compose down",
+    "redis": "redis-server"
+  },
+  "keywords": [
+    "microservices",
+    "moleculer"
+  ],
+  "author": "",
+  "devDependencies": {
+    "eslint": "^8.25.0",
+    "jest": "^27.5.1",
+    "jest-cli": "^27.5.1",
+    "moleculer-repl": "^0.7.3"
+  },
+  "dependencies": {
+    "amqplib": "^0.10.3",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.3.1",
+    "ioredis": "^5.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "moleculer": "^0.14.26",
+    "moleculer-amqp-queue": "^0.0.1",
+    "moleculer-db": "^0.8.20",
+    "moleculer-db-adapter-mongo": "^0.4.15",
+    "moleculer-web": "^0.10.4",
+    "mutex": "^1.0.4",
+    "nats": "^2.16.0",
+    "node-nats-streaming": "^0.3.2",
+    "redis": "^4.6.8",
+    "redis-server": "^1.2.2"
+  },
+  "engines": {
+    "node": ">= 16.x.x"
+  },
+  "jest": {
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node",
+    "rootDir": "./services",
+    "roots": [
+      "../test"
+    ]
+  }
+}
