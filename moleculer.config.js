@@ -31,7 +31,7 @@ module.exports = {
 	// Namespace of nodes to segment your nodes on the same network.
 	namespace: "",
 	// Unique node identifier. Must be unique in a namespace.
-	nodeID: null,
+	nodeID: "Node_One",
 	// Custom metadata store. Store here what you want. Accessing: `this.broker.metadata`
 	metadata: {},
 
@@ -60,8 +60,8 @@ module.exports = {
 	// More info: https://moleculer.services/docs/0.14/networking.html
 	// Note: During the development, you don't need to define it because all services will be loaded locally.
 	// In production you can set it via `TRANSPORTER=nats://localhost:4222` environment variable.
-	transporter: "amqp://localhost",//"STAN"
-	// transporter:null,
+	// transporter: "amqp://localhost",//"STAN"
+	transporter:null,
 	// Define a cacher.
 	// More info: https://moleculer.services/docs/0.14/caching.html
 	cacher: "Memory",
@@ -195,7 +195,7 @@ module.exports = {
 	middlewares: [],
 
 	// Register custom REPL commands.
-	replCommands: null,
+	replCommands: "nodes",
 
 	// Called after broker created.
 	created(broker) {

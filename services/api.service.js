@@ -29,7 +29,7 @@ module.exports = {
 				autoAliases: true,
 
 				aliases: {
-					"GET greeter": "greeter.task1",
+					"GET bav": "bav.task",
 				},
 				callingOptions: {},
 
@@ -59,24 +59,9 @@ module.exports = {
 		// Serve assets from "public" folder. More info: https://moleculer.services/docs/0.14/moleculer-web.html#Serve-static-files
 		assets: {
 			folder: "public",
-
-			// Options to `server-static` module
 			options: {}
 		}
 	},
-	// actions: {
-	// 	rest: {
-	// 		method: "GET",
-	// 		path: "/process"
-	// 	},
-	// 	async processRequest(ctx) {
-	// 		console.log("Doing processRequest");
-	// 		const request = ctx.params.request;
-	// 		// Xử lý yêu cầu tại đây
-	// 		const response = await ctx.broker.call("greeter.task1",{request});
-	// 		return response;
-	// 	},
-	// },
 	methods: {
 		async authenticate(ctx, route, req) {
 			// Read the token from header
@@ -109,7 +94,6 @@ module.exports = {
 				if (type === "Token" || type === "Bearer")
 					token = req.headers.authorization.split(" ")[1];
 			}
-			console.log("================================" + token);
 			let user;
 			if (token) {
 				// Verify JWT token
